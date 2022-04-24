@@ -2,12 +2,12 @@ import Foundation
 
 @available(macOS 12.0, *)
 @available(iOS 15, *)
-protocol HTTPClient {
+public protocol HTTPClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) async throws -> T
 }
 
 @available(macOS 12.0, *)
-extension HTTPClient {
+public extension HTTPClient {
     // TODO: Create the encoder to encode JSON or URL Encoder
     func sendRequest<T: Decodable>(
         endpoint: Endpoint,
